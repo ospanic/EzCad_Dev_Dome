@@ -1,0 +1,10 @@
+D:\C#\EzCAD_Dev_Dome\EzCAD_Dev_Dome\bin\Debug\EzCAD_Dev_Dome.exe.config
+D:\C#\EzCAD_Dev_Dome\EzCAD_Dev_Dome\bin\Debug\EzCAD_Dev_Dome.exe
+D:\C#\EzCAD_Dev_Dome\EzCAD_Dev_Dome\bin\Debug\EzCAD_Dev_Dome.pdb
+D:\C#\EzCAD_Dev_Dome\EzCAD_Dev_Dome\obj\Debug\EzCAD_Dev_Dome.csprojAssemblyReference.cache
+D:\C#\EzCAD_Dev_Dome\EzCAD_Dev_Dome\obj\Debug\EzCAD_Dev_Dome.Main_Form.resources
+D:\C#\EzCAD_Dev_Dome\EzCAD_Dev_Dome\obj\Debug\EzCAD_Dev_Dome.Properties.Resources.resources
+D:\C#\EzCAD_Dev_Dome\EzCAD_Dev_Dome\obj\Debug\EzCAD_Dev_Dome.csproj.GenerateResource.cache
+D:\C#\EzCAD_Dev_Dome\EzCAD_Dev_Dome\obj\Debug\EzCAD_Dev_Dome.csproj.CoreCompileInputs.cache
+D:\C#\EzCAD_Dev_Dome\EzCAD_Dev_Dome\obj\Debug\EzCAD_Dev_Dome.exe
+D:\C#\EzCAD_Dev_Dome\EzCAD_Dev_Dome\obj\Debug\EzCAD_Dev_Dome.pdb
