@@ -17,16 +17,16 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 ## 显式调用方法如下：
 
-1.调用Windows API函数LoadLibrary()动态加载DLL；
+1.调用Windows API函数LoadLibrary()动态加载DLL;
 
-2.调用Windows API函数GetProcAddress()取得将要调用的DLL中函数的指针；用函数指针调用DLL中函数完成相应功能；
+2.调用Windows API函数GetProcAddress()取得将要调用的DLL中函数的指针;用函数指针调用DLL中函数完成相应功能;
 
 3.在程序结束时或不再使用DLL中函数时，调用Windows API函数FreeLibrary()释放动态链接库。
 
-注意：调用MarkEzd.dll的程序必须放在ezcad2.exe同一个目录下，否则MarkEzd.dll将无法正常工作；而且ezcad2.exe在运行的时候MarkEzd.dll将无法正常使用，所以在使用MarkEzd.dll时必须关闭ezcad2.exe。
+注意：调用MarkEzd.dll的程序必须放在ezcad2.exe同一个目录下，否则MarkEzd.dll将无法正常工作;而且ezcad2.exe在运行的时候MarkEzd.dll将无法正常使用，所以在使用MarkEzd.dll时必须关闭ezcad2.exe。
 
 # 2.函数说明
-在MarkEzd.dll中所有函数（个别函数除外）返回值均为一个整形的通用错误码
+在MarkEzd.dll中所有函数(个别函数除外)返回值均为一个整形的通用错误码
 
 ## 通用错误码定义如下：
 
@@ -78,9 +78,9 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：初始化lmc1控制卡。
 
-#### 语    法：`int lmc1_Initial（TCHAR* strEzCadPath,BOOL bTestMode,HWND hOwenWnd）；`
+#### 语    法：`int lmc1_Initial(TCHAR* strEzCadPath,BOOL bTestMode,HWND hOwenWnd);`
 
-- strEzCadPath是ezcad2.exe所处的目录的全路径名称；
+- strEzCadPath是ezcad2.exe所处的目录的全路径名称;
 
 - bTestMode  指是否是测试模式
 
@@ -96,7 +96,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：关闭lmc1控制卡。
 
-#### 语    法：`int lmc1_Close（）；`
+#### 语    法：`int lmc1_Close();`
 
 #### 描    述：在程序中退出时必须调用lmc1_Close来关闭lmc1控制卡。
 
@@ -118,7 +118,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：标刻当前数据库里的所有数据。
 
-#### 语    法：`int lmc1_Mark（BOOL bFlyMark）；`
+#### 语    法：`int lmc1_Mark(BOOL bFlyMark);`
 
 - bFlyMark= TRUE 使能飞动打标
 
@@ -134,7 +134,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：更改指定名称的文本对象的文本内容。
 
-#### 语    法：`int lmc1_ChangeTextByName(TCHAR* strTextName, TCHAR* strTextNew)；`
+#### 语    法：`int lmc1_ChangeTextByName(TCHAR* strTextName, TCHAR* strTextNew);`
 
 - strTextName     要更改内容的文本对象的名称
 
@@ -152,7 +152,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：标刻当前数据库里的指定名称的对象。
 
-#### 语    法：`int lmc1_MarkEntity（TCHAR* strEntName）；`
+#### 语    法：`int lmc1_MarkEntity(TCHAR* strEntName);`
 
 #### 描    述：在使用lmc1_LoadEzdFile载入ezd文件后即可以使用此函数开始加工指定名称的对象，此函数一直等待设备加工完毕后才返回。
 
@@ -164,7 +164,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：读lmc1的输入端口。
 
-#### 语    法：`int lmc1_ReadPort（WORD& data）；`
+#### 语    法：`int lmc1_ReadPort(WORD& data);`
 
 - data 输入端口的数据
 
@@ -178,7 +178,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：写lmc1的输出端口。
 
-#### 语    法：`int lmc1_WritePort（WORD data）；`
+#### 语    法：`int lmc1_WritePort(WORD data);`
 
 - data 输出端口的数据
 
@@ -192,7 +192,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：得到当前数据库里的所有对象的预览图像。
 
-#### 语  法：`Cbitmap* lmc1_GetPrevBitmap（HWND hwnd,int nBMPWIDTH,int nBMPHEIGHT）；`
+#### 语  法：`Cbitmap* lmc1_GetPrevBitmap(HWND hwnd,int nBMPWIDTH,int nBMPHEIGHT);`
 
 - hwnd需要显示当前图像的窗口句柄
 
@@ -210,7 +210,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：设置设备参数
 
-#### 语    法：`int lmc1_SetDevCfg（）；`
+#### 语    法：`int lmc1_SetDevCfg();`
 
 #### 描    述：调用lmc1_SetDevCfg会自动弹出设备参数设置对话框，用户可以设置设备参数。
 
@@ -223,7 +223,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 #### 目    的：设置当前填充参数。
 
 #### 语    法：
-	int lmc1_SetHatchParam（BOOL   bEnableContour,//使能轮廓本身
+	int lmc1_SetHatchParam(BOOL   bEnableContour,//使能轮廓本身
 							int    bEnableHatch1,//使能填充1
 							int    nPenNo1,//填充笔
 							int    nHatchAttrib1,//填充属性
@@ -240,7 +240,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 							double dHatchStartOffset2,//填充线起始偏移距离
 							double dHatchEndOffset2,//填充线结束偏移距离
 							double dHatchAngle2);//填充线角度 (弧度值)
-							）；
+							);
 
 - bEnableContour 是否使能轮廓
 
@@ -281,13 +281,13 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 #### 目    的：设置当前默认的字体参数。
 
 #### 语    法：
-	 int lmc1_SetFontParam（TCHAR* strFontName
+	 int lmc1_SetFontParam(TCHAR* strFontName
 							double dCharHeight,
 							double dCharWidth,
 							double dCharAngle,
 							double dCharSpace,
 							double dLineSpace,
-							BOOL   bEqualCharWidth）；
+							BOOL   bEqualCharWidth);
 
 - StrFontName  字体名称
 
@@ -314,7 +314,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 #### 目    的：得到对应笔号的参数。
 
 #### 语    法：
-	   int lmc1_GetPenParam（int      nPenNo,//要设置的笔号(0-255)    
+	   int lmc1_GetPenParam(int      nPenNo,//要设置的笔号(0-255)    
 							int       nMarkLoop,//加工次数
 							double&   dMarkSpeed,//标刻次数mm/s
 							double&   dPowerRatio,//功率百分比(0-100%)
@@ -333,7 +333,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 							double&   dPointTime,//打点延时 ms  
 							BOOL&     bPulsePointMode,//脉冲点模式
 							int&      nPulseNum,//脉冲点数目
-							double&   dFlySpeed）；//流水线速度
+							double&   dFlySpeed);//流水线速度
 
 #### 描    述：在程序中调用lmc1_GetPenParam来读出数据库中对应笔号的参数。
 
@@ -346,7 +346,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 #### 目    的：设置设备参数
 
 #### 语    法：
-	  int lmc1_SetPenParam（int      nPenNo,//要设置的笔号(0-255)  
+	  int lmc1_SetPenParam(int      nPenNo,//要设置的笔号(0-255)  
 							int      nMarkLoop,//加工次数
 							double   dMarkSpeed,//标刻次数mm/s
 							double   dPowerRatio,//功率百分比(0-100%)
@@ -377,7 +377,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：清除对象库里所有对象。
 
-#### 语    法：`int lmc1_ClearEntLib（）；`
+#### 语    法：`int lmc1_ClearEntLib();`
 
 #### 描    述：在程序中调用lmc1_ ClearEntLib来清除对象库里所有对象。
 
@@ -390,7 +390,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 #### 目    的：加入新文本到数据库中。
 
 #### 语    法：
-	 int lmc1_AddTextToLib（TCHAR* pStr,
+	 int lmc1_AddTextToLib(TCHAR* pStr,
 							TCHAR* pEntName,
 							double dPosX,
 							double dPosY,
@@ -447,7 +447,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 #### 目    的：加入曲线到数据库中。
 
 #### 语    法：
-		int lmc1_AddCurveToLib（double ptBuf[][2],//曲线顶点数组
+		int lmc1_AddCurveToLib(double ptBuf[][2],//曲线顶点数组
 								int    ptNum,//曲线顶点数
 								TCHAR* pEntName,//曲线对象名称
 								int    nPenNo,//曲线对象使用的笔号
@@ -464,7 +464,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 #### 目    的：加入指定文件到数据库中。
 
 #### 语    法：
-	 int lmc1_AddFileToLib（TCHAR* pFileName, //文件名称
+	 int lmc1_AddFileToLib(TCHAR* pFileName, //文件名称
 							TCHAR* pEntName,// 文件对象名称
 							double dPosX, //文件左下角基点x坐标
 							double dPosY, //文件左下角基点y坐标
@@ -667,7 +667,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：设置旋转变换参数。
 
-#### 语    法：`int lmc1_SetRotateParam（double dCenterX,double dCenterY,double dRotateAng）；`
+#### 语    法：`int lmc1_SetRotateParam(double dCenterX,double dCenterY,double dRotateAng);`
 
 - dCenterX 旋转中心x坐标
 
@@ -685,7 +685,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：扩展轴移动到指定坐标位置。
 
-#### 语    法： `int lmc1_AxisMoveTo（int axis,double GoalPos）；`
+#### 语    法： `int lmc1_AxisMoveTo(int axis,double GoalPos);`
 
 - axis     指定要运动的扩展轴号  0 = 轴0  1 = 轴1
 
@@ -701,7 +701,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：扩展轴校正原点。
 
-#### 语    法：`int lmc1_AxisCorrectOrigin（int axis）；`
+#### 语    法：`int lmc1_AxisCorrectOrigin(int axis);`
 
 - axis     指定要校正原点的扩展轴号  0 = 轴0  1 = 轴1
 
@@ -715,7 +715,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：得到扩展轴的当前坐标。
 
-#### 语    法：`int lmc1_GetAxisCoor（int axis）；`
+#### 语    法：`int lmc1_GetAxisCoor(int axis);`
 
 - axis     指定的扩展轴号  0 = 轴0  1 = 轴1
 
@@ -729,7 +729,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：复位扩展轴坐标。
 
-#### 语    法：`int lmc1_Reset（BOOL bEnAxis0 , BOOL bEnAxis1）；`
+#### 语    法：`int lmc1_Reset(BOOL bEnAxis0 , BOOL bEnAxis1);`
 
 - bEnAxis0    是否使能扩展轴号  0
 
@@ -745,7 +745,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：得到当前系统支持的所有字体参数。
 
-#### 语    法：`lmc1_FontRecord* lmc1_GetAllFontRecord（int nFontNum）；`
+#### 语    法：`lmc1_FontRecord* lmc1_GetAllFontRecord(int nFontNum);`
 
 	nFontNum 字体数目
 	//字体类型属性定义
@@ -775,7 +775,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：保存当前数据库里所有对象到指定ezd文件里。
 
-#### 语    法：`int lmc1_SaveEntLibToFile（TCHAR* strFileName）；`
+#### 语    法：`int lmc1_SaveEntLibToFile(TCHAR* strFileName);`
 
 - strFileName    ezd文件名称
 
@@ -790,12 +790,12 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 #### 目    的：得到指定对象的最大最小坐标。
 
 #### 语    法：
-	int lmc1_GetEntSize（TCHAR* pEntName,
+	int lmc1_GetEntSize(TCHAR* pEntName,
 						double  dMinx,
 						double  dMiny,
 						double  dMaxx,
 						double  dMaxy ,
-						double  dZ）；
+						double  dZ);
 
 - pEntName 对象名称
 
@@ -818,7 +818,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：指定对象移动相对位置。
 
-#### 语    法：`int lmc1_GetEntSize（TCHAR* pEntName, double dMovex, double dMovey）；`
+#### 语    法：`int lmc1_GetEntSize(TCHAR* pEntName, double dMovex, double dMovey);`
 
 - pEntName 对象名称
 - dMovex  对象移动的x坐标
@@ -834,7 +834,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：标刻一次红光显示框。
 
-#### 语    法：`int lmc1_RedLightMark（）；`
+#### 语    法：`int lmc1_RedLightMark();`
 
 #### 描    述：标刻一次红光显示框。
 
@@ -848,11 +848,11 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 语    法：
 
-	 int lmc1_MarkLine（double x1,
+	 int lmc1_MarkLine(double x1,
 						double y1
 						double x2,
 						double y2,
-						int    pen）；
+						int    pen);
 
 - x1,y1起点坐标
 
@@ -866,7 +866,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：标刻指定点。
 
-#### 语    法：`int lmc1_MarkPoint（double x, double y, double delay, int pen）；`
+#### 语    法：`int lmc1_MarkPoint(double x, double y, double delay, int pen);`
 
 - x,y点坐标
 - delay打点时间
@@ -882,7 +882,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：得到当前振镜坐标。
 
-#### 语    法：`int lmc1_GetCurCoor（double& x, double& y）；`
+#### 语    法：`int lmc1_GetCurCoor(double& x, double& y);`
 
 - x,y 点坐标
 - delay 打点时间
@@ -898,7 +898,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：得到当前数据库中的对象总数。
 
-#### 语    法：`int lmc1_GetEntityCount（）；`
+#### 语    法：`int lmc1_GetEntityCount();`
 
 #### 描    述：得到当前数据库中的对象总数
 
@@ -910,9 +910,9 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：得到指定序号的对象名称。
 
-#### 语    法：`int lmc1_GetEntityName（int nEntityIndex, TCHAR szEntName[256]）；`
+#### 语    法：`int lmc1_GetEntityName(int nEntityIndex, TCHAR szEntName[256]);`
 
-- nEntityIndex指定序号，范围值为 0－对象总数（对象总数由函数lmc1_GetEntityCount得到）
+- nEntityIndex指定序号，范围值为 0－对象总数(对象总数由函数lmc1_GetEntityCount得到)
 - szEntName得到的对象名称
 
 #### 描    述：得到指定序号的对象名称
@@ -927,7 +927,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：向数据库添加一组点对象。
 
-#### 语    法：`int lmc1_AddPointToLib(double[,] PtBuf,int ptNum,string strEntName,int nPenNo)；`
+#### 语    法：`int lmc1_AddPointToLib(double[,] PtBuf,int ptNum,string strEntName,int nPenNo);`
 
 - PtBuf点位置的二维数组，第一为必须为2，如double[n,2]
 - ptNum点位置的个数
@@ -946,7 +946,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 
 #### 目    的：停止标刻
 
-#### 语    法：`int lmc1_ StopMark()；`
+#### 语    法：`int lmc1_ StopMark();`
 
 ### 描    述：调用lmc1_ StopMark会停止标刻。
 
@@ -957,7 +957,7 @@ MarkEzd.dll动态链接库函数的调用方法为显示调用,显式调用方�
 # 3.开发步骤(仅适用于VC++，本工程采用C#编写，以下仅供参考)
 下面我们结合一个实例来讲解如何进行二次开发。
 
-客户要求在一个矩形工件中心加工一行文本（如下图所示），每个工件要加工的文本都必须从网络服务器上去在线查询获得。
+客户要求在一个矩形工件中心加工一行文本(如下图所示)，每个工件要加工的文本都必须从网络服务器上去在线查询获得。
 
 用户要进行二次开发一般的步骤如下：
 
@@ -988,23 +988,23 @@ lmc1_ChangeTextByName=(LMC1_CHANGETEXTBYNAME)GetProcAddress(hEzdDLL,_T("lmc1_Cha
 
  
 
-1）初始化lmc1控制卡  lmc1_Initial（）
+1)初始化lmc1控制卡  lmc1_Initial()
 
-2）打开test.ezd  lmc1_LoadEzdFile(_T(“test.ezd”))。
+2)打开test.ezd  lmc1_LoadEzdFile(_T(“test.ezd”))。
 
-3）从网络服务器上去在线查询获得要加工的文本 （需要用户自己编写这段程序）
+3)从网络服务器上去在线查询获得要加工的文本 (需要用户自己编写这段程序)
 
-4）更新更改指定名称的文本对象的文本内容
+4)更新更改指定名称的文本对象的文本内容
 
 假设上一步取得的文本是“1234567”
 
-lmc1_ChangeTextByName（_T(“name”)，_T(“1234567”) ）；
+lmc1_ChangeTextByName(_T(“name”)，_T(“1234567”) );
 
-5）调用lmc1_Mark加工
+5)调用lmc1_Mark加工
 
-6）如果还要加工则返回第3步继续。
+6)如果还要加工则返回第3步继续。
 
-7）关闭lmc1控制卡 lmc1_Close（）；
+7)关闭lmc1控制卡 lmc1_Close();
 
  
 
